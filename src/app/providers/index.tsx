@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { type ReactNode, StrictMode, useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 interface Props {
   children: ReactNode;
@@ -23,9 +23,9 @@ export const Providers = function Providers({ children }: Props) {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools />
-      <BrowserRouter>
+      <HashRouter>
         <StrictMode>{children}</StrictMode>
-      </BrowserRouter>
+      </HashRouter>
     </QueryClientProvider>
   );
 };
