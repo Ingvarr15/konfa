@@ -1,0 +1,52 @@
+// interaction colors:
+$color-main: #1e7c1e;
+
+// indicators colors
+$color-error: #d32020;
+$color-success: #2ca305;
+
+// base colors
+$color-black: #1c1d1f;
+$color-white: #ffffff;
+
+// font-weights
+$font-weight-extra-bold: 800;
+$font-weight-bold: 700;
+$font-weight-semi-bold: 600;
+$font-weight-medium: 500;
+$font-weight-regular: 400;
+$font-weight-light: 300;
+
+// font-family
+$font-family: 'Roboto', 'Helvetica Neue', arial, sans-serif;
+
+// border-radius
+$border-radius-xs: 4px;
+$border-radius-s: 8px;
+$border-radius-m: 12px;
+$border-radius-l: 16px;
+$border-radius-lg: 24px;
+$border-radius-xxl: 32px;
+$border-radius-xl: 50%;
+
+// screen-sizes
+$min-width-xs: 360px;
+$max-width-xs: 767px;
+$min-width-sm: 768px;
+$max-width-sm: 1023px;
+$min-width-md: 1024px;
+$max-width-md: 1279px;
+$min-width-lg: 1280px;
+$max-width-lg: 1439px;
+$min-width-xl: 1440px;
+$max-width-xl: 1599px;
+$min-width-xxl: 1600px;
+$max-width-xxl: 1919px;
+$min-width-xxxl: 1920px;
+
+$gap-xs: 8px;
+$gap-s: 12px;
+$gap-m: 16px;
+$gap-l: 24px;
+$gap-xl: 32px;
+$gap-xxl: 48px;

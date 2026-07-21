@@ -1,0 +1,43 @@
+@use './variables' as *;
+
+/* stylelint-disable */
+:export {
+  colorMain: $color-main;
+  colorError: $color-error;
+  colorSuccess: $color-success;
+  colorBlack: $color-black;
+  colorWhite: $color-white;
+  fontWeightExtraBold: $font-weight-extra-bold;
+  fontWeightBold: $font-weight-bold;
+  fontWeightSemiBold: $font-weight-semi-bold;
+  fontWeightMedium: $font-weight-medium;
+  fontWeightRegular: $font-weight-regular;
+  fontWeightLight: $font-weight-light;
+  fontFamily: $font-family;
+  borderRadiusXS: $border-radius-xs;
+  borderRadiusS: $border-radius-s;
+  borderRadiusM: $border-radius-m;
+  borderRadiusL: $border-radius-l;
+  borderRadiusLG: $border-radius-lg;
+  borderRadiusXXL: $border-radius-xxl;
+  borderRadiusXL: $border-radius-xl;
+  minWidthXS: $min-width-xs;
+  maxWidthXS: $max-width-xs;
+  minWidthSM: $min-width-sm;
+  maxWidthSM: $max-width-sm;
+  minWidthMD: $min-width-md;
+  maxWidthMD: $max-width-md;
+  minWidthLG: $min-width-lg;
+  maxWidthLG: $max-width-lg;
+  minWidthXL: $min-width-xl;
+  maxWidthXL: $max-width-xl;
+  minWidthXXL: $min-width-xxl;
+  maxWidthXXL: $max-width-xxl;
+  minWidthXXXL: $min-width-xxxl;
+  gapXS: $gap-xs;
+  gapS: $gap-s;
+  gapM: $gap-m;
+  gapL: $gap-l;
+  gapXL: $gap-xl;
+  gapXXL: $gap-xxl;
+}
