@@ -3,7 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { type ReactNode, StrictMode, useState } from 'react';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { theme } from '@/shared/styles/theme';
 
 interface Props {
@@ -29,7 +29,9 @@ export const Providers = function Providers({ children }: Props) {
         <CssBaseline />
         <QueryClientProvider client={queryClient}>
           <ReactQueryDevtools />
-          <HashRouter>{children}</HashRouter>
+          <BrowserRouter basename={import.meta.env.BASE_URL}>
+            {children}
+          </BrowserRouter>
         </QueryClientProvider>
       </ThemeProvider>
     </StrictMode>
