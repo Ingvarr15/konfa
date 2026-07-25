@@ -1,1 +1,6 @@
 @use '@/shared/styles/variables' as *;
+
+.main {
+  min-height: 100vh;
+  height: 0;
+}

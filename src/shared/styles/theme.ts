@@ -23,6 +23,9 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: cssVars.fontFamily,
+    h1: {
+      fontSize: cssVars.fontSizeH1,
+    },
   },
   shape: {
     borderRadius: Number.parseInt(cssVars.borderRadiusS, 10),
@@ -36,8 +39,12 @@ export const theme = createTheme({
         root: {
           'fontWeight': Number.parseInt(cssVars.fontWeightSemiBold, 10),
           'textTransform': 'none',
+          '&.MuiButton-contained': {
+            color: cssVars.colorWhite,
+          },
           '&.MuiButton-contained.MuiButton-colorPrimary:hover': {
             backgroundColor: darken(cssVars.colorMain, 0.1),
+
           },
           '&.MuiButton-outlined': {
             borderWidth: '2px',

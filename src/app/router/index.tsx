@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router';
 import { MainPage } from '@/pages/main';
 
 export const Router = function Router() {

@@ -1,5 +1,5 @@
 // interaction colors:
-$color-main: #16b416;
+$color-main: #496a9c;
 
 // indicators colors
 $color-error: #d32020;
@@ -10,6 +10,17 @@ $color-black: #1c1d1f;
 $color-white: #dfdfdf;
 $color-background-light: #313131;
 $color-background-dark: #131313;
+
+$font-size-h1: 28px;
+$font-size-h2: 20px;
+$font-size-h3: 17px;
+$font-size-body-l: 17px;
+$font-size-body-m: 15px;
+$font-size-body-s: 13px;
+$font-size-label-m: 17px;
+$font-size-label-s: 15px;
+$font-size-label-xs: 13px;
+$font-size-caption: 11px;
 
 // font-weights
 $font-weight-extra-bold: 800;
@@ -52,3 +63,5 @@ $gap-m: 16px;
 $gap-l: 24px;
 $gap-xl: 32px;
 $gap-xxl: 48px;
+
+$progress-bar-height: 6px;

@@ -1,0 +1,7 @@
+@use '@/shared/styles/variables' as *;
+
+.card {
+  padding: $gap-l;
+  border-radius: $border-radius-l;
+  background-color: $color-background-light;
+}

@@ -31,6 +31,7 @@ export default defineConfig([
       import: importPlugin,
     },
     rules: {
+      '@stylistic/max-len': ['error', { code: 80 }],
       'import/order': [
         'error',
         {

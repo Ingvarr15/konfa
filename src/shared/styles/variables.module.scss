@@ -9,6 +9,16 @@
   colorWhite: $color-white;
   colorBackgroundLight: $color-background-light;
   colorBackgroundDark: $color-background-dark;
+  fontSizeH1: $font-size-h1;
+  fontSizeH2: $font-size-h2;
+  fontSizeH3: $font-size-h3;
+  fontSizeBodyL: $font-size-body-l;
+  fontSizeBodyM: $font-size-body-m;
+  fontSizeBodyS: $font-size-body-s;
+  fontSizeLabelS: $font-size-label-s;
+  fontSizeLabelM: $font-size-label-m;
+  fontSizeLabelXS: $font-size-label-xs;
+  fontSizeCaption: $font-size-caption;
   fontWeightExtraBold: $font-weight-extra-bold;
   fontWeightBold: $font-weight-bold;
   fontWeightSemiBold: $font-weight-semi-bold;
@@ -42,4 +52,5 @@
   gapL: $gap-l;
   gapXL: $gap-xl;
   gapXXL: $gap-xxl;
+  progressBarHeight: $progress-bar-height;
 }

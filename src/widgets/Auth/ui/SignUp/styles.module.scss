@@ -1,0 +1,40 @@
+@use '@/shared/styles/variables' as *;
+
+.container {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $gap-l;
+  position: relative;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 420px);
+
+  &Inner {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-xs;
+  }
+}
+
+.title {
+  text-align: center;
+  margin-bottom: $gap-l;
+}
+
+.alert {
+  position: absolute;
+  bottom: $gap-l;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+}
+
+.button {
+  margin-top: $gap-xs;
+}
