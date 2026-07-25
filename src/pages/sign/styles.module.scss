@@ -1,12 +1,5 @@
 @use '@/shared/styles/variables' as *;
 
-.loader {
-  position: fixed;
-  inset: 0;
-  display: grid;
-  place-items: center;
-}
-
 .signContainer {
   display: flex;
   flex-direction: column;

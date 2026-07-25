@@ -79,7 +79,6 @@ export const SignIn = function SignIn() {
           />
 
           <TextField
-            autoComplete="new-password"
             error={formik.touched.password && Boolean(formik.errors.password)}
             fullWidth
             helperText={formik.touched.password && formik.errors.password}

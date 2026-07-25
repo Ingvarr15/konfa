@@ -1,4 +1,4 @@
-import { Yup } from '@/shared/lib';
+import { Yup } from '@/shared/libs';
 import type { SignInValues, SignUpValues } from '../types';
 
 export const signINInitialValues: SignInValues = {

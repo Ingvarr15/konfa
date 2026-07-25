@@ -1,5 +1,5 @@
 import { Card as MuiCard, type CardProps } from '@mui/material';
-import { cx } from '@/shared/lib';
+import { cx } from '@/shared/libs';
 import styles from './styles.module.scss';
 
 const CardBase = function Card({ className, children, ...props }: CardProps) {
