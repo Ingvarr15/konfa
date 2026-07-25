@@ -1,5 +1,25 @@
 import { supabase } from '@/shared/api';
-import type { SignUpValues } from '../types';
+import type { SignInValues, SignUpValues } from '../types';
+
+export const signIn = async ({
+  email,
+  password,
+}: SignInValues) => {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+
+  if (error) {
+    if (error.code === 'invalid_credentials') {
+      throw new Error('Неверные данные');
+    }
+
+    throw error;
+  }
+
+  return data;
+};
 
 export const signUp = async ({
   email,

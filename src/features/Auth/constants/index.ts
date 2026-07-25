@@ -1,14 +1,29 @@
 import { Yup } from '@/shared/lib';
-import type { SignUpValues } from '../types';
+import type { SignInValues, SignUpValues } from '../types';
 
-export const initialValues: SignUpValues = {
+export const signINInitialValues: SignInValues = {
+  email: '',
+  password: '',
+};
+
+export const signUpInitialValues: SignUpValues = {
   username: '',
   email: '',
   password: '',
   passwordConfirmation: '',
 };
 
-export const validationSchema = Yup.object({
+export const signInValidationSchema = Yup.object({
+  email: Yup.string()
+    .trim()
+    .email('Введите корректный email')
+    .required('Введите email'),
+  password: Yup.string()
+    .min(8, 'Пароль должен содержать не менее 8 символов')
+    .required('Введите пароль'),
+});
+
+export const signUpValidationSchema = Yup.object({
   username: Yup.string()
     .trim()
     .min(2, 'Имя должно содержать не менее 2 символов')

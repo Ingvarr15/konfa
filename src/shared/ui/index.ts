@@ -6,3 +6,5 @@ export { Box } from './Box';
 export { LinearProgress } from './LinearProgress';
 export { Alert } from './Alert';
 export { Card } from './Card';
+export { CircularProgress } from './CircularProgress';
+export * from './Tabs';

@@ -37,14 +37,15 @@ export const theme = createTheme({
       },
       styleOverrides: {
         root: {
+          'padding': `${cssVars.gapXS} ${cssVars.gapS}`,
           'fontWeight': Number.parseInt(cssVars.fontWeightSemiBold, 10),
+          'letterSpacing': '0.3px',
           'textTransform': 'none',
           '&.MuiButton-contained': {
             color: cssVars.colorWhite,
           },
           '&.MuiButton-contained.MuiButton-colorPrimary:hover': {
             backgroundColor: darken(cssVars.colorMain, 0.1),
-
           },
           '&.MuiButton-outlined': {
             borderWidth: '2px',
@@ -52,6 +53,14 @@ export const theme = createTheme({
           '&.MuiButton-outlined.MuiButton-colorPrimary:hover': {
             borderColor: cssVars.colorMain,
           },
+        },
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          fontFamily: cssVars.fontFamily,
+          letterSpacing: cssVars.letterSpacing,
         },
       },
     },

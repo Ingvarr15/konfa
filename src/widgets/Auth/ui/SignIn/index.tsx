@@ -1,35 +1,35 @@
 import { useFormik } from 'formik';
 import {
-  signUpInitialValues,
-  useSignUp,
-  signUpValidationSchema,
-  type SignUpValues,
+  signINInitialValues,
+  signInValidationSchema,
+  useSignIn,
+  type SignInValues,
 } from '@/features/Auth';
 import { useProgressBar, useSnackBar } from '@/shared/hooks';
 import { Box, Button, Card, TextField, Typography } from '@/shared/ui';
 import styles from './styles.module.scss';
 
-export const SignUp = function SignUp() {
+export const SignIn = function SignIn() {
   const { showProgressBar, hideProgressBar } = useProgressBar();
   const { showSnackBar } = useSnackBar();
 
   const {
-    mutateAsync: sighUp,
+    mutateAsync: sighIn,
     isPending,
-  } = useSignUp();
+  } = useSignIn();
 
-  const formik = useFormik<SignUpValues>({
-    initialValues: signUpInitialValues,
-    validationSchema: signUpValidationSchema,
+  const formik = useFormik<SignInValues>({
+    initialValues: signINInitialValues,
+    validationSchema: signInValidationSchema,
     onSubmit: async (values, { resetForm, setSubmitting }) => {
       try {
         showProgressBar();
-        await sighUp(values);
+        await sighIn(values);
         resetForm();
 
         showSnackBar({
           type: 'success',
-          text: 'Регистрация выполнена',
+          text: 'Вход выполнен',
         });
       }
       catch (error) {
@@ -61,22 +61,10 @@ export const SignUp = function SignUp() {
           className={styles.title}
           variant="h1"
         >
-          Регистрация
+          Вход
         </Typography>
 
         <Box className={styles.formInner}>
-          <TextField
-            autoComplete="username"
-            error={formik.touched.username && Boolean(formik.errors.username)}
-            fullWidth
-            helperText={formik.touched.username && formik.errors.username}
-            label="Имя пользователя"
-            name="username"
-            onBlur={formik.handleBlur}
-            onChange={formik.handleChange}
-            value={formik.values.username}
-          />
-
           <TextField
             autoComplete="email"
             error={formik.touched.email && Boolean(formik.errors.email)}
@@ -102,25 +90,6 @@ export const SignUp = function SignUp() {
             type="password"
             value={formik.values.password}
           />
-
-          <TextField
-            autoComplete="new-password"
-            error={
-              formik.touched.passwordConfirmation
-              && Boolean(formik.errors.passwordConfirmation)
-            }
-            fullWidth
-            helperText={
-              formik.touched.passwordConfirmation
-              && formik.errors.passwordConfirmation
-            }
-            label="Подтверждение пароля"
-            name="passwordConfirmation"
-            onBlur={formik.handleBlur}
-            onChange={formik.handleChange}
-            type="password"
-            value={formik.values.passwordConfirmation}
-          />
         </Box>
 
         <Button
@@ -130,7 +99,7 @@ export const SignUp = function SignUp() {
           type="submit"
           variant="contained"
         >
-          Зарегистрироваться
+          Вход
         </Button>
       </Card>
     </Box>

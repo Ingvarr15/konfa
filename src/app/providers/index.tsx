@@ -8,6 +8,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { type ReactNode, StrictMode, useState } from 'react';
 import { BrowserRouter } from 'react-router';
 import { theme } from '@/shared/styles/theme';
+import { AuthProvider } from './AuthProvider';
 import { ProgressBarProvider } from './ProgressBarProvider';
 import { SnackBarProvider } from './SnackBarProvider';
 
@@ -36,11 +37,13 @@ export const Providers = function Providers({ children }: Props) {
           <QueryClientProvider client={queryClient}>
             <ReactQueryDevtools />
             <BrowserRouter basename={import.meta.env.BASE_URL}>
-              <SnackBarProvider>
-                <ProgressBarProvider>
-                  {children}
-                </ProgressBarProvider>
-              </SnackBarProvider>
+              <AuthProvider>
+                <SnackBarProvider>
+                  <ProgressBarProvider>
+                    {children}
+                  </ProgressBarProvider>
+                </SnackBarProvider>
+              </AuthProvider>
             </BrowserRouter>
           </QueryClientProvider>
         </ThemeProvider>
