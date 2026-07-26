@@ -25,7 +25,7 @@ export const navigationItems = [
     path: routes.profile,
     rightElement: SignOutButton,
   },
-] as const;
+];
 
 export const signNavigationItems = [
   {
@@ -38,4 +38,4 @@ export const signNavigationItems = [
     label: 'Регистрация',
     path: routes.signUp,
   },
-] as const;
+];
