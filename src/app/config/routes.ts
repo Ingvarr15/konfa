@@ -2,6 +2,7 @@ export const routes = {
   contacts: '/',
   chats: '/chats',
   profile: '/profile',
-  sign: '/sign',
+  signIn: '/sign-in',
+  signUp: '/sign-up',
   notFound: '*',
 } as const;

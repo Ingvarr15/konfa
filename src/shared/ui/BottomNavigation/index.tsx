@@ -16,7 +16,7 @@ const BottomNavigationBase = function BottomNavigation({
     <MuiBottomNavigation
       className={cx(styles.bottomNavigation, className)}
       component={Paper}
-      elevation={4}
+      elevation={0}
       {...props}
     />
   );

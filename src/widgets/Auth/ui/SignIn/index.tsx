@@ -6,7 +6,7 @@ import {
   type SignInValues,
 } from '@/features/Auth';
 import { useProgressBar, useSnackBar } from '@/shared/hooks';
-import { Box, Button, Card, TextField, Typography } from '@/shared/ui';
+import { Box, Button, Card, TextField } from '@/shared/ui';
 import styles from './styles.module.scss';
 
 export const SignIn = function SignIn() {
@@ -57,13 +57,6 @@ export const SignIn = function SignIn() {
         noValidate
         onSubmit={formik.handleSubmit}
       >
-        <Typography
-          className={styles.title}
-          variant="h1"
-        >
-          Вход
-        </Typography>
-
         <Box className={styles.formInner}>
           <TextField
             autoComplete="email"

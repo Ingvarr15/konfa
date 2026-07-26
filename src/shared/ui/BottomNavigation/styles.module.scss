@@ -2,6 +2,7 @@
 
 .bottomNavigation {
   flex-shrink: 0;
+  height: $bottom-navigation-height;
   border-radius: $border-radius-s $border-radius-s 0 0;
   background-color: $color-background-light;
 }

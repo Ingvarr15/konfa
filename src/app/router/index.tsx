@@ -1,10 +1,14 @@
 import { createBrowserRouter } from 'react-router';
 import { ChatsPage } from '@/pages/chats';
-import { MainPage } from '@/pages/main';
+import { ContactsPage } from '@/pages/main';
 import { ProfilePage } from '@/pages/profile';
-import { SignPage } from '@/pages/sign';
+import { SignInPage } from '@/pages/sign-in';
+import { SignUpPage } from '@/pages/sign-up';
 import { routes } from '../config';
-import { AppLayout } from '../layouts';
+import {
+  AppLayout,
+  AuthLayout,
+} from '../layouts';
 import {
   PrivateRoute,
   PublicRoute,
@@ -22,7 +26,7 @@ export const router = createBrowserRouter(
           children: [
             {
               index: true,
-              Component: MainPage,
+              Component: ContactsPage,
             },
             {
               path: routes.chats,
@@ -40,8 +44,17 @@ export const router = createBrowserRouter(
       Component: PublicRoute,
       children: [
         {
-          path: routes.sign,
-          Component: SignPage,
+          Component: AuthLayout,
+          children: [
+            {
+              path: routes.signIn,
+              Component: SignInPage,
+            },
+            {
+              path: routes.signUp,
+              Component: SignUpPage,
+            },
+          ],
         },
       ],
     },

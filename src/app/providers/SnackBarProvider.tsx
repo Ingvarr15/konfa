@@ -4,6 +4,7 @@ import {
   type SnackBarOptions,
 } from '@/shared/types';
 import { Alert, Snackbar } from '@/shared/ui';
+import styles from './styles.module.scss';
 
 export const SnackBarProvider = function SnackBarProvider({
   children,
@@ -33,6 +34,7 @@ export const SnackBarProvider = function SnackBarProvider({
       {children}
 
       <Snackbar
+        className={styles.snackBar}
         open={isShow}
         autoHideDuration={snackBarOptions.duration}
         onClose={handleHideSnackBar}

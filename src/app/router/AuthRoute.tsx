@@ -29,7 +29,7 @@ export const AuthRoute = function AuthRoute({
   const isPrivate = type === authRouteTypesMap.private;
 
   if (isPrivate && !isAuthenticated) {
-    return <Navigate replace to={redirectPath ?? routes.sign} />;
+    return <Navigate replace to={redirectPath ?? routes.signIn} />;
   }
 
   if (!isPrivate && isAuthenticated) {
@@ -42,7 +42,7 @@ export const AuthRoute = function AuthRoute({
 export const PrivateRoute = function PrivateRoute() {
   return (
     <AuthRoute
-      redirectPath={routes.sign}
+      redirectPath={routes.signIn}
       type={authRouteTypesMap.private}
     />
   );

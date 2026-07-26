@@ -31,6 +31,24 @@ export const theme = createTheme({
     borderRadius: Number.parseInt(cssVars.borderRadiusS, 10),
   },
   components: {
+    MuiAppBar: {
+      defaultProps: {
+        elevation: 0,
+      },
+    },
+    MuiPaper: {
+      defaultProps: {
+        elevation: 0,
+      },
+      styleOverrides: {
+        root: {
+          '--Paper-overlay': 'none',
+          '--Paper-shadow': 'none',
+          'backgroundImage': 'none',
+          'boxShadow': 'none',
+        },
+      },
+    },
     MuiButton: {
       defaultProps: {
         disableElevation: true,

@@ -16,7 +16,7 @@ export const IndexRedirect = function IndexRedirect() {
   return (
     <Navigate
       replace
-      to={isAuthenticated ? routes.contacts : routes.sign}
+      to={isAuthenticated ? routes.contacts : routes.signIn}
     />
   );
 };

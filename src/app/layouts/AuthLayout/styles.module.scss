@@ -19,6 +19,9 @@
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   min-width: 0;
   overflow: auto;
   padding: 0 $gap-s;
