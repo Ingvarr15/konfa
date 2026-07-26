@@ -1,6 +1,10 @@
 import { createBrowserRouter } from 'react-router';
+import { ChatsPage } from '@/pages/chats';
 import { MainPage } from '@/pages/main';
+import { ProfilePage } from '@/pages/profile';
 import { SignPage } from '@/pages/sign';
+import { routes } from '../config';
+import { AppLayout } from '../layouts';
 import {
   PrivateRoute,
   PublicRoute,
@@ -13,8 +17,22 @@ export const router = createBrowserRouter(
       Component: PrivateRoute,
       children: [
         {
-          path: '/',
-          Component: MainPage,
+          path: routes.contacts,
+          Component: AppLayout,
+          children: [
+            {
+              index: true,
+              Component: MainPage,
+            },
+            {
+              path: routes.chats,
+              Component: ChatsPage,
+            },
+            {
+              path: routes.profile,
+              Component: ProfilePage,
+            },
+          ],
         },
       ],
     },
@@ -22,13 +40,13 @@ export const router = createBrowserRouter(
       Component: PublicRoute,
       children: [
         {
-          path: '/sign',
+          path: routes.sign,
           Component: SignPage,
         },
       ],
     },
     {
-      path: '*',
+      path: routes.notFound,
       Component: IndexRedirect,
     },
   ],

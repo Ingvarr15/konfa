@@ -7,4 +7,6 @@ export { LinearProgress } from './LinearProgress';
 export { Alert } from './Alert';
 export { Card } from './Card';
 export { CircularProgress } from './CircularProgress';
+export { BottomNavigation } from './BottomNavigation';
+export { AppBar } from './AppBar';
 export * from './Tabs';

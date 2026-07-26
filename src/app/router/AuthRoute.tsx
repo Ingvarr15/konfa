@@ -2,6 +2,7 @@ import {
   Navigate,
   Outlet,
 } from 'react-router';
+import { routes } from '@/app/config';
 import { Loader } from '@/widgets/Auth';
 import { authRouteTypesMap } from '@/shared/constants';
 import { useAuth } from '@/shared/hooks';
@@ -28,11 +29,11 @@ export const AuthRoute = function AuthRoute({
   const isPrivate = type === authRouteTypesMap.private;
 
   if (isPrivate && !isAuthenticated) {
-    return <Navigate replace to={redirectPath ?? '/sign'} />;
+    return <Navigate replace to={redirectPath ?? routes.sign} />;
   }
 
   if (!isPrivate && isAuthenticated) {
-    return <Navigate replace to={redirectPath ?? '/'} />;
+    return <Navigate replace to={redirectPath ?? routes.contacts} />;
   }
 
   return <Outlet />;
@@ -41,7 +42,7 @@ export const AuthRoute = function AuthRoute({
 export const PrivateRoute = function PrivateRoute() {
   return (
     <AuthRoute
-      redirectPath="/sign"
+      redirectPath={routes.sign}
       type={authRouteTypesMap.private}
     />
   );
@@ -50,7 +51,7 @@ export const PrivateRoute = function PrivateRoute() {
 export const PublicRoute = function PublicRoute() {
   return (
     <AuthRoute
-      redirectPath="/"
+      redirectPath={routes.contacts}
       type={authRouteTypesMap.public}
     />
   );

@@ -4,7 +4,6 @@ import {
   ThemeProvider,
 } from '@mui/material/styles';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { type ReactNode, StrictMode, useState } from 'react';
 import { theme } from '@/shared/styles/theme';
 import { AuthProvider } from './AuthProvider';
@@ -34,7 +33,6 @@ export const Providers = function Providers({ children }: Props) {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <QueryClientProvider client={queryClient}>
-            <ReactQueryDevtools />
             <AuthProvider>
               <SnackBarProvider>
                 <ProgressBarProvider>
