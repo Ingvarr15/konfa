@@ -15,6 +15,10 @@ export const signIn = async ({
       throw new Error('Неверные данные');
     }
 
+    if (error.code === 'email_not_confirmed') {
+      throw new Error('Подтвердите свой email чтобы войти');
+    }
+
     throw error;
   }
 
@@ -40,7 +44,7 @@ export const signUp = async ({
 
   if (error) {
     if (error.code === 'user_already_exists') {
-      throw new Error('Адрес электронной почты уже занят');
+      throw new Error('Email уже занят');
     }
 
     if (error.status === 500) {

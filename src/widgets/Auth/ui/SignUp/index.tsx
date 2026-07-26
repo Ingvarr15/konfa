@@ -30,7 +30,7 @@ export const SignUp = function SignUp() {
         showSnackBar({
           type: 'success',
           text: 'Письмо с кодом подтверждения было отправлено вам '
-            + 'на электронную почту',
+            + 'на email',
         });
       }
       catch (error) {

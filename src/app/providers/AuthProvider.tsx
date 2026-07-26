@@ -36,7 +36,7 @@ export const AuthProvider = function AuthProvider({
 
         showSnackBar({
           type: 'success',
-          text: 'Адрес электронной почты успешно подтверждён',
+          text: 'Email успешно подтверждён',
         });
       }
     });
