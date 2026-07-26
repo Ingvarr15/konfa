@@ -1,3 +1,4 @@
+import { SignOutButton } from '@/features/Auth';
 import {
   ChatsIcon,
   ContactsIcon,
@@ -22,6 +23,7 @@ export const navigationItems = [
     icon: ProfileIcon,
     label: 'Профиль',
     path: routes.profile,
+    rightElement: SignOutButton,
   },
 ] as const;
 

@@ -23,3 +23,5 @@ const BottomNavigationBase = function BottomNavigation({
 };
 
 export const BottomNavigation = BottomNavigationBase as Component;
+
+export { BottomNavigationAction } from '@mui/material';

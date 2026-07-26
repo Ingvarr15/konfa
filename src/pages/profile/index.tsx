@@ -1,7 +1,7 @@
 export const ProfilePage = function ProfilePage() {
   return (
-    <main>
+    <div>
       Профиль
-    </main>
+    </div>
   );
 };

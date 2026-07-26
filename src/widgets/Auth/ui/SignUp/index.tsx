@@ -84,6 +84,20 @@ export const SignUp = function SignUp() {
           />
 
           <TextField
+            autoComplete="off"
+            error={formik.touched.inviteCode
+              && Boolean(formik.errors.inviteCode)}
+            fullWidth
+            helperText={formik.touched.inviteCode
+              && formik.errors.inviteCode}
+            label="Код приглашения"
+            name="inviteCode"
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.values.inviteCode}
+          />
+
+          <TextField
             autoComplete="new-password"
             error={formik.touched.password && Boolean(formik.errors.password)}
             fullWidth

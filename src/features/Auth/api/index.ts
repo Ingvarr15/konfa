@@ -23,6 +23,7 @@ export const signIn = async ({
 
 export const signUp = async ({
   email,
+  inviteCode,
   password,
   username,
 }: SignUpValues) => {
@@ -31,6 +32,7 @@ export const signUp = async ({
     password,
     options: {
       data: {
+        invite_code: inviteCode.trim().toUpperCase(),
         username,
       },
     },
@@ -42,11 +44,17 @@ export const signUp = async ({
     }
 
     if (error.status === 500) {
-      throw new Error('Имя пользователя уже занято');
+      throw new Error('Ошибка регистрации');
     }
 
     throw error;
   }
+
+  return data;
+};
+
+export const signOut = async () => {
+  const data = await supabase.auth.signOut();
 
   return data;
 };

@@ -1,64 +1,39 @@
-import { BottomNavigationAction } from '@mui/material';
 import {
   Outlet,
-  useLocation,
-  useNavigate,
 } from 'react-router';
+import { AppBar, BottomNavigation } from '@/widgets/Navigation';
+import { cx } from '@/shared/libs';
+import type { NavigationItem } from '@/shared/types';
 import {
-  AppBar,
-  BottomNavigation,
   Box,
-  Typography,
 } from '@/shared/ui';
 import styles from './styles.module.scss';
-import { navigationItems } from '../../config';
 
-export const AppLayout = function AppLayout() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const pageTitle = navigationItems.find(
-    ({ path }) => path === location.pathname,
-  )?.label;
+interface Props {
+  centerContent?: boolean;
+  navigationItems: NavigationItem[];
+}
 
+export const AppLayout = function AppLayout({
+  centerContent = false,
+  navigationItems,
+}: Props) {
   return (
     <Box className={styles.layout}>
-      <AppBar
-        className={styles.appBar}
-        position="static"
-      >
-        <Typography
-          className={styles.title}
-          variant="h6"
-        >
-          {pageTitle}
-        </Typography>
-      </AppBar>
+      <AppBar navigationItems={navigationItems} />
 
       <Box className={styles.content}>
-        <Outlet />
+        <Box
+          className={cx(
+            styles.contentInner,
+            centerContent && styles.contentInnerCentered,
+          )}
+        >
+          <Outlet />
+        </Box>
       </Box>
 
-      <BottomNavigation
-        value={location.pathname}
-        onChange={(_, path: string) => navigate(path)}
-      >
-        {navigationItems.map(({
-          icon: Icon,
-          label,
-          path,
-        }) => (
-          <BottomNavigationAction
-            aria-label={label}
-            className={styles.navigationAction}
-            classes={{
-              selected: styles.navigationActionSelected,
-            }}
-            icon={<Icon />}
-            key={path}
-            value={path}
-          />
-        ))}
-      </BottomNavigation>
+      <BottomNavigation navigationItems={navigationItems} />
     </Box>
   );
 };

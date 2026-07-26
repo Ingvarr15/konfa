@@ -1,7 +1,7 @@
 export const ContactsPage = function ContactsPage() {
   return (
-    <main>
+    <div>
       Контакты
-    </main>
+    </div>
   );
 };

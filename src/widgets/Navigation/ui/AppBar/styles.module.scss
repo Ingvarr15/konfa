@@ -1,0 +1,21 @@
+@use '@/shared/styles/variables' as *;
+
+.appBar {
+  align-items: center;
+  border-radius: 0 0 $border-radius-s $border-radius-s;
+  flex-direction: row;
+  padding: $gap-m $gap-l;
+  position: static;
+  position: relative;
+
+  &Title {
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  &RightElement {
+    position: absolute;
+    right: $gap-l;
+    bottom: $gap-s;
+  }
+}

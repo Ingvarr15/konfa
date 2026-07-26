@@ -9,6 +9,7 @@ export const signINInitialValues: SignInValues = {
 export const signUpInitialValues: SignUpValues = {
   username: '',
   email: '',
+  inviteCode: '',
   password: '',
   passwordConfirmation: '',
 };
@@ -33,6 +34,10 @@ export const signUpValidationSchema = Yup.object({
     .trim()
     .email('Введите корректный email')
     .required('Введите email'),
+  inviteCode: Yup.string()
+    .trim()
+    .length(16, 'Код приглашения должен содержать 16 символов')
+    .required('Введите код приглашения'),
   password: Yup.string()
     .min(8, 'Пароль должен содержать не менее 8 символов')
     .required('Введите пароль'),

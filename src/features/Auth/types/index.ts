@@ -6,6 +6,7 @@ export interface SignInValues {
 export interface SignUpValues {
   username: string;
   email: string;
+  inviteCode: string;
   password: string;
   passwordConfirmation: string;
 }

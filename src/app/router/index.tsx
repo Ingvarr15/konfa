@@ -4,11 +4,12 @@ import { ContactsPage } from '@/pages/main';
 import { ProfilePage } from '@/pages/profile';
 import { SignInPage } from '@/pages/sign-in';
 import { SignUpPage } from '@/pages/sign-up';
-import { routes } from '../config';
 import {
-  AppLayout,
-  AuthLayout,
-} from '../layouts';
+  navigationItems,
+  routes,
+  signNavigationItems,
+} from '../config';
+import { AppLayout } from '../layouts';
 import {
   PrivateRoute,
   PublicRoute,
@@ -22,7 +23,9 @@ export const router = createBrowserRouter(
       children: [
         {
           path: routes.contacts,
-          Component: AppLayout,
+          element: (
+            <AppLayout navigationItems={navigationItems} />
+          ),
           children: [
             {
               index: true,
@@ -44,7 +47,12 @@ export const router = createBrowserRouter(
       Component: PublicRoute,
       children: [
         {
-          Component: AuthLayout,
+          element: (
+            <AppLayout
+              centerContent
+              navigationItems={signNavigationItems}
+            />
+          ),
           children: [
             {
               path: routes.signIn,
