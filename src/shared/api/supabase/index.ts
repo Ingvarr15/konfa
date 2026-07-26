@@ -11,4 +11,9 @@ if (!supabasePublishableKey) {
   throw new Error('VITE_SUPABASE_PUBLISHABLE_KEY is not defined');
 }
 
-export const supabase = createClient(supabaseUrl, supabasePublishableKey);
+export const supabase = createClient(supabaseUrl, supabasePublishableKey, {
+  auth: {
+    detectSessionInUrl: true,
+    persistSession: true,
+  },
+});

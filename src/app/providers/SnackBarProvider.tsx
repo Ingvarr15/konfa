@@ -1,4 +1,8 @@
-import { type PropsWithChildren, useState } from 'react';
+import {
+  type PropsWithChildren,
+  useCallback,
+  useState,
+} from 'react';
 import { SnackBarContext } from '@/shared/hooks';
 import { cssVars } from '@/shared/styles';
 import {
@@ -16,11 +20,13 @@ export const SnackBarProvider = function SnackBarProvider({
     duration: 5000,
   });
 
-  const handleShowSnackBar = () => setShow(true);
-  const handleHideSnackBar = () => setShow(false);
+  const handleShowSnackBar = useCallback(() => setShow(true), []);
+  const handleHideSnackBar = useCallback(() => setShow(false), []);
 
-  const handleSetSnackBarOptions = (newOptions: SnackBarOptions) =>
-    setSnackBarOptions(newOptions);
+  const handleSetSnackBarOptions = useCallback(
+    (newOptions: SnackBarOptions) => setSnackBarOptions(newOptions),
+    [],
+  );
 
   return (
     <SnackBarContext.Provider

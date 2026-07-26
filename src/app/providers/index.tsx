@@ -33,13 +33,13 @@ export const Providers = function Providers({ children }: Props) {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <QueryClientProvider client={queryClient}>
-            <AuthProvider>
-              <SnackBarProvider>
+            <SnackBarProvider>
+              <AuthProvider>
                 <ProgressBarProvider>
                   {children}
                 </ProgressBarProvider>
-              </SnackBarProvider>
-            </AuthProvider>
+              </AuthProvider>
+            </SnackBarProvider>
           </QueryClientProvider>
         </ThemeProvider>
       </StyledEngineProvider>

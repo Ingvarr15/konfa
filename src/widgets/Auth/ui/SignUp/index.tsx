@@ -29,7 +29,8 @@ export const SignUp = function SignUp() {
 
         showSnackBar({
           type: 'success',
-          text: 'Регистрация выполнена',
+          text: 'Письмо с кодом подтверждения было отправлено вам '
+            + 'на электронную почту',
         });
       }
       catch (error) {
