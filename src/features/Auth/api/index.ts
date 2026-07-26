@@ -39,6 +39,10 @@ export const signUp = async ({
         invite_code: inviteCode.trim().toUpperCase(),
         username,
       },
+      emailRedirectTo: new URL(
+        import.meta.env.BASE_URL,
+        window.location.origin,
+      ).toString(),
     },
   });
 
