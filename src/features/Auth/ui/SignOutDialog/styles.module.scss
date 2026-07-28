@@ -1,0 +1,26 @@
+@use '@/shared/styles/variables' as *;
+
+.paper {
+  margin: $gap-l;
+  max-width: 360px;
+  width: calc(100% - 2 * $gap-l);
+}
+
+.content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: $gap-l;
+  padding: $gap-l;
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  gap: $gap-s;
+  justify-content: flex-end;
+
+  &Button {
+    padding: 4px $gap-xs;
+  }
+}

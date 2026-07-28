@@ -1,7 +1,7 @@
+import { Profile } from '@/widgets/Profile';
+
 export const ProfilePage = function ProfilePage() {
   return (
-    <div>
-      Профиль
-    </div>
+    <Profile />
   );
 };

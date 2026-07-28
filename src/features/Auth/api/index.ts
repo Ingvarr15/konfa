@@ -51,6 +51,12 @@ export const signUp = async ({
       throw new Error('Email уже занят');
     }
 
+    if (error.code === 'weak_password') {
+      throw new Error(
+        'Новый пароль недостаточно надёжный (требуются буквы и цифры)',
+      );
+    }
+
     if (error.status === 500) {
       throw new Error('Ошибка регистрации');
     }
@@ -62,7 +68,9 @@ export const signUp = async ({
 };
 
 export const signOut = async () => {
-  const data = await supabase.auth.signOut();
+  const { error } = await supabase.auth.signOut();
 
-  return data;
+  if (error) {
+    throw error;
+  }
 };

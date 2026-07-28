@@ -17,10 +17,8 @@ export const signUpInitialValues: SignUpValues = {
 export const signInValidationSchema = Yup.object({
   email: Yup.string()
     .trim()
-    .email('Введите корректный email')
     .required('Введите email'),
   password: Yup.string()
-    .min(8, 'Пароль должен содержать не менее 8 символов')
     .required('Введите пароль'),
 });
 
@@ -45,3 +43,7 @@ export const signUpValidationSchema = Yup.object({
     .oneOf([Yup.ref('password')], 'Пароли не совпадают')
     .required('Подтвердите пароль'),
 });
+
+export const authQueryKeys = {
+  default: ['auth'],
+};

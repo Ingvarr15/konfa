@@ -1,0 +1,41 @@
+@use '@/shared/styles/variables' as *;
+
+.container {
+  padding: $gap-s 0;
+  display: flex;
+  flex-direction: column;
+  gap: $gap-l;
+}
+
+.card,
+.codeCard {
+  padding: 6px $gap-s;
+  border-radius: $border-radius-s;
+  margin: 6px 4px 0;
+  max-width: 300px;
+}
+
+.profileItem {
+  &Password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $gap-xs;
+  }
+}
+
+.codeCard {
+  cursor: pointer;
+}
+
+.title {
+  font-size: $font-size-body-l;
+  color: $color-light-gray;
+}
+
+.value {
+  &Code {
+    color: $color-main;
+    user-select: none;
+  }
+}
